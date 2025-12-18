@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           composer --version
-          composer clean-cache
+          composer clear-cache
           composer --no-interaction --no-progress --prefer-dist --ansi install
 
       - name: Push to Pantheon

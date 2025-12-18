@@ -22,8 +22,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          composer version
-          php -v
+          composer --version
           composer clean-cache
           composer --no-interaction --no-progress --prefer-dist --ansi install
 

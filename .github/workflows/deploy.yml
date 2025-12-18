@@ -18,7 +18,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Install Dependencies
+        run: |
+          composer version
+          php -v
+          composer clean-cache
+          composer --no-interaction --no-progress --prefer-dist --ansi install
 
       - name: Push to Pantheon
         uses: pantheon-systems/push-to-pantheon@0.7.0
